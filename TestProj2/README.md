@@ -2,16 +2,29 @@
 Maven, mysql, multiple schema
 
 
+
+
+## Building and running mysql container: (pre requesites: docker)
+```
+cd TestProj2
+cd mysql-docker-container
+./build.sh
+./run.sh
+```
+
+
 ## Running commands for maven:
 
 For first schema:
 ```
+cd TestProj2
 mvn flyway:info -Dflyway.configFile=configfiles/config1.properties
 mvn flyway:migrate -Dflyway.configFile=configfiles/config1.properties
 ```
 
 For second schema:
 ```
+cd TestProj2
 mvn flyway:info -Dflyway.configFile=configfiles/config2.properties
 mvn flyway:migrate -Dflyway.configFile=configfiles/config2.properties
 ```

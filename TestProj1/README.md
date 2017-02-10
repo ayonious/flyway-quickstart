@@ -1,8 +1,19 @@
 ## Example Description:
 Maven, mysql, single schema
 
+
+
+## Building and running mysql container: (pre requesites: docker)
+```
+cd TestProj1
+cd mysql-docker-container
+./build.sh
+./run.sh
+```
+
 ## Running commands for maven:
 ```
+cd TestProj1
 mvn flyway:info
 mvn flyway:migrate
 ```
