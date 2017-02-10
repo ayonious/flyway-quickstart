@@ -24,12 +24,12 @@
 
 				<executions>
 				    <execution>
-						<id>first-execution</id>
+						<id>${flyway.execution.id}</id>
 						<phase>compile</phase>
 						<goals>
 							<goal>migrate</goal>
 						</goals>
-					</execution> 
+					</execution>
 				</executions>
 
 				<dependencies>
@@ -41,11 +41,11 @@
 				</dependencies>
 				
 				<configuration>
-					<user>ayon</user>
-					<password>ayon123pass</password>
-					<url>jdbc:mysql://127.0.0.1:3306/ayon_db</url>
+					<user>${flyway.user}</user>
+					<password>${flyway.password}</password>
+					<url>${flyway.url}</url>
 					<locations>
-						<location>filesystem:migrationSqlScripts</location>
+						<location>filesystem:${flyway.locations}</location>
 					</locations>
 					<skip>false</skip>
 				</configuration>
