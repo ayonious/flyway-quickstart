@@ -1,6 +1,6 @@
 This contains several runnable maven projects to get quickly started into flyway. Running instructions can be found inside each project
 
-TestProj1: maven,mysql
+TestProj1: maven,mysql,single schema/db
 
 
 
