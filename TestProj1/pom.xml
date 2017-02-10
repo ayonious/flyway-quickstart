@@ -1,0 +1,68 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>some</groupId>
+	<artifactId>good</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>bar</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+	
+	<build>
+		<plugins>	
+			<plugin>
+
+				<groupId>org.flywaydb</groupId>
+			    <artifactId>flyway-maven-plugin</artifactId>
+			    <version>4.0.3</version>
+
+				<executions>
+				    <execution>
+						<id>first-execution</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>migrate</goal>
+						</goals>
+						<configuration>
+							<driver>com.mysql.jdbc.Driver</driver>
+							<baselineOnMigrate>true</baselineOnMigrate>
+							<url>jdbc:mysql://127.0.0.1:3306/ayon_db</url>
+							<user>ayon</user>
+							<password>ayon123pass</password>
+							<locations>
+								<location>
+									filesystem:migrationSqlScripts
+								</location>
+							</locations>
+						</configuration>
+					</execution> 
+				</executions>
+
+				<dependencies>
+					<dependency>
+						<groupId>mysql</groupId>
+						<artifactId>mysql-connector-java</artifactId>
+						<version>6.0.5</version>
+					</dependency>
+				</dependencies>
+				
+				<configuration>
+					<user>ayon</user>
+					<password>ayon123pass</password>
+					<url>jdbc:mysql://127.0.0.1:3306/ayon_db</url>
+					<locations>
+						<location>filesystem:migrationSqlScripts</location>
+					</locations>
+					<skip>false</skip>
+				</configuration>
+
+			</plugin>
+		</plugins>
+	</build>
+</project>
