@@ -2,7 +2,8 @@ This contains several runnable maven projects to get quickly started into flyway
 
 ```
 TestProj1: maven,mysql,single schema/db
-TestProj2: maven,mysql,multiple schema/db
+TestProj2: maven,mysql,multiple schema/db,command line variables
+TestProj3: maven,postgresql,single schema/db,commandline variables, dockerize flyway (not working yet)
 ```
 
 
